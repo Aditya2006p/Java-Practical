@@ -15,11 +15,11 @@ void placeWord(): Place the words which begin and end with a vowel at the beginn
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class WordExample {
+public class WordExample_Q11 {
     private String strdata;
     
     // Parameterized Constructor
-    public WordExample(String sentence) {
+    public WordExample_Q11(String sentence) {
         // Check if the sentence ends with '.', '?' or '!'
         if (sentence.endsWith(".") || sentence.endsWith("?") || sentence.endsWith("!")) {
             this.strdata = sentence;
@@ -30,7 +30,7 @@ public class WordExample {
     }
     
     // Method to count words beginning and ending with a vowel
-    public void countWord() {
+    public void countWord_Q11() {
         if (strdata.isEmpty()) {
             System.out.println("No valid sentence to process.");
             return;
@@ -46,7 +46,7 @@ public class WordExample {
         
         // Check each word
         for (String word : words) {
-            if (isVowel(word.charAt(0)) && isVowel(word.charAt(word.length() - 1))) {
+            if (isVowel_Q11(word.charAt(0)) && isVowel_Q11(word.charAt(word.length() - 1))) {
                 count++;
             }
         }
@@ -55,7 +55,7 @@ public class WordExample {
     }
     
     // Method to place words beginning and ending with a vowel at the beginning
-    public void placeWord() {
+    public void placeWord_Q11() {
         if (strdata.isEmpty()) {
             System.out.println("No valid sentence to process.");
             return;
@@ -72,7 +72,7 @@ public class WordExample {
         
         // Categorize words
         for (String word : words) {
-            if (isVowel(word.charAt(0)) && isVowel(word.charAt(word.length() - 1))) {
+            if (isVowel_Q11(word.charAt(0)) && isVowel_Q11(word.charAt(word.length() - 1))) {
                 vowelWords.add(word);
             } else {
                 otherWords.add(word);
@@ -95,7 +95,7 @@ public class WordExample {
     }
     
     // Helper method to check if a character is a vowel
-    private boolean isVowel(char ch) {
+    private boolean isVowel_Q11(char ch) {
         ch = Character.toUpperCase(ch);
         return ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U';
     }
@@ -107,10 +107,10 @@ public class WordExample {
         System.out.println("Enter a sentence (ending with '.', '?' or '!'):");
         String sentence = scanner.nextLine();
         
-        WordExample wordEx = new WordExample(sentence);
+        WordExample_Q11 wordEx = new WordExample_Q11(sentence);
         
-        wordEx.countWord();
-        wordEx.placeWord();
+        wordEx.countWord_Q11();
+        wordEx.placeWord_Q11();
         
         scanner.close();
     }

@@ -14,7 +14,7 @@ Steps to replace all 0's with 1 in a given integer
 
 import java.util.Scanner;
 
-public class ReplaceZerosWithOnes {
+public class ReplaceZerosWithOnes_Q4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -23,7 +23,7 @@ public class ReplaceZerosWithOnes {
         int number = scanner.nextInt();
         
         // Replace 0's with 1's
-        int result = replaceZerosWithOnes(number);
+        int result = replaceZerosWithOnes_Q4(number);
         
         // Display the result
         System.out.println("After replacing 0's with 1's: " + result);
@@ -32,7 +32,7 @@ public class ReplaceZerosWithOnes {
     }
     
     // Method to replace all 0's with 1's in a number
-    private static int replaceZerosWithOnes(int num) {
+    private static int replaceZerosWithOnes_Q4(int num) {
         // If number is 0, return 1
         if (num == 0) {
             return 1;

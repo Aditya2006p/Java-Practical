@@ -15,7 +15,7 @@ For option (ii) accept monthly instalment (p), rate of interest (r) and time per
 import java.util.Scanner;
 import java.lang.Math;
 
-public class BankDepositCalculator {
+public class BankDepositCalculator_Q2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -28,10 +28,10 @@ public class BankDepositCalculator {
         
         switch (choice) {
             case 1:
-                calculateTermDeposit(scanner);
+                calculateTermDeposit_Q2(scanner);
                 break;
             case 2:
-                calculateRecurringDeposit(scanner);
+                calculateRecurringDeposit_Q2(scanner);
                 break;
             default:
                 System.out.println("Error: Invalid option selected. Please choose 1 or 2.");
@@ -40,7 +40,7 @@ public class BankDepositCalculator {
         scanner.close();
     }
     
-    private static void calculateTermDeposit(Scanner scanner) {
+    private static void calculateTermDeposit_Q2(Scanner scanner) {
         System.out.println("\nTerm Deposit Selected");
         
         System.out.print("Enter Principal amount (p): ");
@@ -58,7 +58,7 @@ public class BankDepositCalculator {
         System.out.printf("Maturity Amount: %.2f\n", maturityAmount);
     }
     
-    private static void calculateRecurringDeposit(Scanner scanner) {
+    private static void calculateRecurringDeposit_Q2(Scanner scanner) {
         System.out.println("\nRecurring Deposit Selected");
         
         System.out.print("Enter Monthly Installment (p): ");

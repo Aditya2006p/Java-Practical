@@ -20,7 +20,7 @@ Else, print "Not Abundant Numbers".
 
 import java.util.Scanner;
 
-public class FriendlyPair {
+public class FriendlyPair_Q3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -32,7 +32,7 @@ public class FriendlyPair {
         int num2 = scanner.nextInt();
         
         // Check if they are friendly pair
-        if (isFriendlyPair(num1, num2)) {
+        if (isFriendlyPair_Q3(num1, num2)) {
             System.out.println("Friendly Pair");
         } else {
             System.out.println("Not Friendly Pair");
@@ -42,7 +42,7 @@ public class FriendlyPair {
     }
     
     // Function to find sum of divisors of a number
-    private static int sumOfDivisors(int num) {
+    private static int sumOfDivisors_Q3(int num) {
         int sum = 0;
         
         // Find all divisors and add them
@@ -56,10 +56,10 @@ public class FriendlyPair {
     }
     
     // Function to check if two numbers are friendly pair
-    private static boolean isFriendlyPair(int num1, int num2) {
+    private static boolean isFriendlyPair_Q3(int num1, int num2) {
         // Calculate sum of divisors for both numbers
-        int sum1 = sumOfDivisors(num1);
-        int sum2 = sumOfDivisors(num2);
+        int sum1 = sumOfDivisors_Q3(num1);
+        int sum2 = sumOfDivisors_Q3(num2);
         
         // Calculate abundance for both numbers
         double abundance1 = (double) sum1 / num1;

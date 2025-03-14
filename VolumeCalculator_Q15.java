@@ -8,67 +8,67 @@ Volume of cone = (1/3)πr2h Volume of hemisphere = (2/3)πr3 Volume of cylinder 
 import java.util.Scanner;
 
 // Interface for volume calculation
-interface Volume {
+interface Volume_Q15 {
     // Abstract method to display volume
-    void displayVolume();
+    void displayVolume_Q15();
 }
 
 // Cone class implementing Volume interface
-class Cone implements Volume {
+class Cone_Q15 implements Volume_Q15 {
     private double radius;
     private double height;
     
     // Constructor
-    public Cone(double radius, double height) {
+    public Cone_Q15(double radius, double height) {
         this.radius = radius;
         this.height = height;
     }
     
     // Implementation of displayVolume method
     @Override
-    public void displayVolume() {
+    public void displayVolume_Q15() {
         double volume = (1.0 / 3.0) * Math.PI * radius * radius * height;
         System.out.printf("Volume of Cone: %.2f cubic units\n", volume);
     }
 }
 
 // Hemisphere class implementing Volume interface
-class Hemisphere implements Volume {
+class Hemisphere_Q15 implements Volume_Q15 {
     private double radius;
     
     // Constructor
-    public Hemisphere(double radius) {
+    public Hemisphere_Q15(double radius) {
         this.radius = radius;
     }
     
     // Implementation of displayVolume method
     @Override
-    public void displayVolume() {
+    public void displayVolume_Q15() {
         double volume = (2.0 / 3.0) * Math.PI * Math.pow(radius, 3);
         System.out.printf("Volume of Hemisphere: %.2f cubic units\n", volume);
     }
 }
 
 // Cylinder class implementing Volume interface
-class Cylinder implements Volume {
+class Cylinder_Q15 implements Volume_Q15 {
     private double radius;
     private double height;
     
     // Constructor
-    public Cylinder(double radius, double height) {
+    public Cylinder_Q15(double radius, double height) {
         this.radius = radius;
         this.height = height;
     }
     
     // Implementation of displayVolume method
     @Override
-    public void displayVolume() {
+    public void displayVolume_Q15() {
         double volume = Math.PI * radius * radius * height;
         System.out.printf("Volume of Cylinder: %.2f cubic units\n", volume);
     }
 }
 
-public class VolumeCalculator {
+public class VolumeCalculator_Q15 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -90,16 +90,16 @@ public class VolumeCalculator {
                     System.out.print("Enter height of cone: ");
                     double coneHeight = scanner.nextDouble();
                     
-                    Volume cone = new Cone(coneRadius, coneHeight);
-                    cone.displayVolume();
+                    Volume_Q15 cone = new Cone_Q15(coneRadius, coneHeight);
+                    cone.displayVolume_Q15();
                     break;
                     
                 case 2:
                     System.out.print("Enter radius of hemisphere: ");
                     double hemisphereRadius = scanner.nextDouble();
                     
-                    Volume hemisphere = new Hemisphere(hemisphereRadius);
-                    hemisphere.displayVolume();
+                    Volume_Q15 hemisphere = new Hemisphere_Q15(hemisphereRadius);
+                    hemisphere.displayVolume_Q15();
                     break;
                     
                 case 3:
@@ -108,8 +108,8 @@ public class VolumeCalculator {
                     System.out.print("Enter height of cylinder: ");
                     double cylinderHeight = scanner.nextDouble();
                     
-                    Volume cylinder = new Cylinder(cylinderRadius, cylinderHeight);
-                    cylinder.displayVolume();
+                    Volume_Q15 cylinder = new Cylinder_Q15(cylinderRadius, cylinderHeight);
+                    cylinder.displayVolume_Q15();
                     break;
                     
                 case 4:

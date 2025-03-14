@@ -6,11 +6,11 @@ Each thread should
 display its respective name and execute after a gap of 500 milliseconds. Each thread should also display a number indicating the number of times it got a chance to execute.
 */
 
-public class MultiThreads {
+public class MultiThreads_Q19 {
     public static void main(String[] args) {
         // Create two thread objects
-        Thread csThread = new Thread(new CustomThread("CSthread"));
-        Thread itThread = new Thread(new CustomThread("ITthread"));
+        Thread csThread = new Thread(new CustomThread_Q19("CSthread"));
+        Thread itThread = new Thread(new CustomThread_Q19("ITthread"));
         
         // Set thread names
         csThread.setName("CSthread");
@@ -23,12 +23,12 @@ public class MultiThreads {
 }
 
 // Custom thread class implementing Runnable interface
-class CustomThread implements Runnable {
+class CustomThread_Q19 implements Runnable {
     private String threadName;
     private int executionCount;
     
     // Constructor
-    public CustomThread(String name) {
+    public CustomThread_Q19(String name) {
         this.threadName = name;
         this.executionCount = 0;
     }

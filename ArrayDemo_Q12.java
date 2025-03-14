@@ -26,9 +26,9 @@ B: [8, 9, 10]
 
 import java.util.Arrays;
 
-public class ArrayDemo {
+public class ArrayDemo_Q12 {
     // Method to find pairs with a given sum
-    public void arrayFunc(int[] arr, int target) {
+    public void arrayFunc_Q12(int[] arr, int target) {
         System.out.println("Finding pairs with sum = " + target);
         
         boolean pairFound = false;
@@ -48,7 +48,7 @@ public class ArrayDemo {
     }
     
     // Overloaded method to merge two sorted arrays
-    public void arrayFunc(int[] A, int p, int[] B, int q) {
+    public void arrayFunc_Q12(int[] A, int p, int[] B, int q) {
         System.out.println("Merging two sorted arrays");
         
         // Create a copy of original arrays for display
@@ -93,7 +93,7 @@ public class ArrayDemo {
     
     // Main method for testing
     public static void main(String[] args) {
-        ArrayDemo demo = new ArrayDemo();
+        ArrayDemo_Q12 demo = new ArrayDemo_Q12();
         
         // Test first method - find pairs with sum = 10
         int[] numbers = {4, 6, 5, -10, 8, 5, 20};
@@ -101,7 +101,7 @@ public class ArrayDemo {
         
         System.out.println("Test 1: Find pairs with sum = " + target);
         System.out.println("Array: " + Arrays.toString(numbers));
-        demo.arrayFunc(numbers, target);
+        demo.arrayFunc_Q12(numbers, target);
         
         System.out.println();
         
@@ -110,6 +110,6 @@ public class ArrayDemo {
         int[] B = {2, 4, 9};
         
         System.out.println("Test 2: Merge sorted arrays");
-        demo.arrayFunc(A, A.length, B, B.length);
+        demo.arrayFunc_Q12(A, A.length, B, B.length);
     }
 } 

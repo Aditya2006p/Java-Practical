@@ -19,7 +19,7 @@ Output 2:
 
 import java.util.Scanner;
 
-public class ZigzagArray {
+public class ZigzagArray_Q5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -35,7 +35,7 @@ public class ZigzagArray {
         }
         
         // Convert array to zigzag pattern
-        zigzagSort(arr);
+        zigzagSort_Q5(arr);
         
         // Display the zigzag array
         System.out.println("Array in zigzag pattern:");
@@ -47,19 +47,19 @@ public class ZigzagArray {
     }
     
     // Function to sort array in zigzag fashion
-    private static void zigzagSort(int[] arr) {
+    private static void zigzagSort_Q5(int[] arr) {
         boolean flag = true; // true means '<' expected, false means '>' expected
         
         for (int i = 0; i < arr.length - 1; i++) {
             if (flag) { // '<' relation expected
                 // If current element is greater than next element, swap them
                 if (arr[i] > arr[i + 1]) {
-                    swap(arr, i, i + 1);
+                    swap_Q5(arr, i, i + 1);
                 }
             } else { // '>' relation expected
                 // If current element is less than next element, swap them
                 if (arr[i] < arr[i + 1]) {
-                    swap(arr, i, i + 1);
+                    swap_Q5(arr, i, i + 1);
                 }
             }
             
@@ -69,7 +69,7 @@ public class ZigzagArray {
     }
     
     // Helper function to swap two elements in an array
-    private static void swap(int[] arr, int i, int j) {
+    private static void swap_Q5(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;

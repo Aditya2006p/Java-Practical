@@ -4,7 +4,7 @@
 
 import java.util.Scanner;
 
-public class DeleteVowels {
+public class DeleteVowels_Q9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -13,7 +13,7 @@ public class DeleteVowels {
         String inputString = scanner.nextLine();
         
         // Delete vowels from the string
-        String result = deleteVowels(inputString);
+        String result = deleteVowels_Q9(inputString);
         
         // Display the result
         System.out.println("String after removing vowels: " + result);
@@ -22,7 +22,7 @@ public class DeleteVowels {
     }
     
     // Function to delete vowels from a string using StringBuffer
-    private static String deleteVowels(String str) {
+    private static String deleteVowels_Q9(String str) {
         // Convert the string to StringBuffer for efficient modification
         StringBuffer sb = new StringBuffer(str);
         

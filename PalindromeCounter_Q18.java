@@ -13,10 +13,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class PalindromeCounter {
+public class PalindromeCounter_Q18 {
     public static void main(String[] args) {
         // First, let's create the sample file
-        createSampleFile();
+        createSampleFile_Q18();
         
         try {
             // Open the file for reading
@@ -37,7 +37,7 @@ public class PalindromeCounter {
                     String word = tokenizer.nextToken();
                     
                     // Check if the word is a palindrome
-                    if (isPalindrome(word) && word.length() > 1) {
+                    if (isPalindrome_Q18(word) && word.length() > 1) {
                         System.out.println(word);
                         palindromeCount++;
                     }
@@ -56,7 +56,7 @@ public class PalindromeCounter {
     }
     
     // Method to check if a string is a palindrome
-    private static boolean isPalindrome(String str) {
+    private static boolean isPalindrome_Q18(String str) {
         // Convert to lowercase for case-insensitive comparison
         str = str.toLowerCase();
         
@@ -75,7 +75,7 @@ public class PalindromeCounter {
     }
     
     // Method to create a sample file for testing
-    private static void createSampleFile() {
+    private static void createSampleFile_Q18() {
         try {
             FileWriter writer = new FileWriter("myfile.txt");
             writer.write("My name is NITIN\n");

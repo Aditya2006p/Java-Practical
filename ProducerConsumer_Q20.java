@@ -15,8 +15,8 @@ public class ProducerConsumer_Q20 {
         BlockingQueue<Integer> queue = new LinkedBlockingQueue<>(1);
         
         // Create producer and consumer threads
-        Thread producerThread = new Thread(new Producer(queue));
-        Thread consumerThread = new Thread(new Consumer(queue));
+        Thread producerThread = new Thread(new Producer_Q20(queue));
+        Thread consumerThread = new Thread(new Consumer_Q20(queue));
         
         // Start the threads
         producerThread.start();
@@ -37,11 +37,11 @@ public class ProducerConsumer_Q20 {
     }
 }
 
-class Producer implements Runnable {
+class Producer_Q20 implements Runnable {
     private final BlockingQueue<Integer> queue;
     private int value = 0;
     
-    public Producer(BlockingQueue<Integer> queue) {
+    public Producer_Q20(BlockingQueue<Integer> queue) {
         this.queue = queue;
     }
     
@@ -64,10 +64,10 @@ class Producer implements Runnable {
     }
 }
 
-class Consumer implements Runnable {
+class Consumer_Q20 implements Runnable {
     private final BlockingQueue<Integer> queue;
     
-    public Consumer(BlockingQueue<Integer> queue) {
+    public Consumer_Q20(BlockingQueue<Integer> queue) {
         this.queue = queue;
     }
     

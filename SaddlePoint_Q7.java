@@ -15,7 +15,7 @@ Else, continue traversing.
 
 import java.util.Scanner;
 
-public class SaddlePoint {
+public class SaddlePoint_Q7 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -35,13 +35,13 @@ public class SaddlePoint {
         }
         
         // Find saddle point
-        findSaddlePoint(matrix, rows, cols);
+        findSaddlePoint_Q7(matrix, rows, cols);
         
         scanner.close();
     }
     
     // Function to find saddle point in a matrix
-    private static void findSaddlePoint(int[][] matrix, int rows, int cols) {
+    private static void findSaddlePoint_Q7(int[][] matrix, int rows, int cols) {
         boolean foundSaddlePoint = false;
         
         // Traverse each element of the matrix

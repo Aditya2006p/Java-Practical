@@ -7,12 +7,12 @@ RollNo: Course:
           Semester:
 */
 
-public class CommandLineInput {
+public class CommandLineInput_Q1 {
     public static void main(String[] args) {
         // Check if all required arguments are provided
         if (args.length < 4) {
             System.out.println("Please provide all required arguments:");
-            System.out.println("java CommandLineInput <name> <rollno> <course> <semester>");
+            System.out.println("java CommandLineInput_Q1 <name> <rollno> <course> <semester>");
             return;
         }
 

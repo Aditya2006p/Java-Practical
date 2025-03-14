@@ -10,7 +10,7 @@ Explanation: 01101111010 - count = 1
 
 import java.util.Scanner;
 
-public class PatternFinding {
+public class PatternFinding_Q8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -19,7 +19,7 @@ public class PatternFinding {
         String binaryString = scanner.nextLine();
         
         // Count patterns of 0(1+)0
-        int patternCount = countPatterns(binaryString);
+        int patternCount = countPatterns_Q8(binaryString);
         
         // Display the result
         System.out.println("Number of 0(1+)0 patterns: " + patternCount);
@@ -28,7 +28,7 @@ public class PatternFinding {
     }
     
     // Function to count patterns of 0(1+)0 in a string
-    private static int countPatterns(String str) {
+    private static int countPatterns_Q8(String str) {
         int count = 0;
         
         // Traverse the string

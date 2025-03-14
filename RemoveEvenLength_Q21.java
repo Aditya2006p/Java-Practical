@@ -24,7 +24,7 @@ public class RemoveEvenLength_Q21 {
         System.out.println("Original list: " + words);
         
         // Call the removeEvenLength method
-        removeEvenLength(words);
+        removeEvenLength_Q21(words);
         
         // Print the modified list
         System.out.println("After removing even length strings: " + words);
@@ -35,7 +35,7 @@ public class RemoveEvenLength_Q21 {
      * 
      * @param list the ArrayList of Strings to be modified
      */
-    public static void removeEvenLength(ArrayList<String> list) {
+    public static void removeEvenLength_Q21(ArrayList<String> list) {
         // Method 1: Using Iterator (safer for removing elements during iteration)
         Iterator<String> iterator = list.iterator();
         while (iterator.hasNext()) {

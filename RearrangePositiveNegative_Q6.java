@@ -15,7 +15,7 @@ Test case:
 
 import java.util.Scanner;
 
-public class RearrangePositiveNegative {
+public class RearrangePositiveNegative_Q6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -31,7 +31,7 @@ public class RearrangePositiveNegative {
         }
         
         // Rearrange positive and negative numbers
-        rearrangeArray(arr);
+        rearrangeArray_Q6(arr);
         
         // Display the rearranged array
         System.out.println("Rearranged array:");
@@ -43,7 +43,7 @@ public class RearrangePositiveNegative {
     }
     
     // Function to rearrange array such that all negative numbers come first
-    private static void rearrangeArray(int[] arr) {
+    private static void rearrangeArray_Q6(int[] arr) {
         int j = 0; // Index for the first positive element
         
         for (int i = 0; i < arr.length; i++) {

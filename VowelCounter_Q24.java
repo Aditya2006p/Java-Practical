@@ -63,7 +63,7 @@ public class VowelCounter_Q24 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String input = inputField.getText();
-                int vowelCount = countVowels(input);
+                int vowelCount = countVowels_Q24(input);
                 resultField.setText(String.valueOf(vowelCount));
             }
         });
@@ -91,7 +91,7 @@ public class VowelCounter_Q24 extends JFrame {
      * @param str the input string
      * @return the number of vowels in the string
      */
-    private int countVowels(String str) {
+    private int countVowels_Q24(String str) {
         if (str == null || str.isEmpty()) {
             return 0;
         }

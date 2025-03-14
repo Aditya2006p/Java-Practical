@@ -15,7 +15,7 @@ public class SwapPairs_Q22 {
             Arrays.asList("four", "score", "and", "seven", "years", "ago")
         );
         System.out.println("Original list 1: " + list1);
-        swapPairs(list1);
+        swapPairs_Q22(list1);
         System.out.println("After swapping pairs: " + list1);
         // Expected output: [score, four, seven, and, ago, years]
         
@@ -24,7 +24,7 @@ public class SwapPairs_Q22 {
             Arrays.asList("to", "be", "or", "not", "to", "be", "hamlet")
         );
         System.out.println("\nOriginal list 2: " + list2);
-        swapPairs(list2);
+        swapPairs_Q22(list2);
         System.out.println("After swapping pairs: " + list2);
         // Expected output: [be, to, not, or, be, to, hamlet]
     }
@@ -35,7 +35,7 @@ public class SwapPairs_Q22 {
      * 
      * @param list the ArrayList of Strings to be modified
      */
-    public static void swapPairs(ArrayList<String> list) {
+    public static void swapPairs_Q22(ArrayList<String> list) {
         // Iterate through the list in steps of 2
         for (int i = 0; i < list.size() - 1; i += 2) {
             // Swap the current element with the next element

@@ -29,9 +29,9 @@ In the last two cases, at least one out of n and p is negative. So, the exceptio
 
 import java.util.Scanner;
 
-class MyCalculator {
+class MyCalculator_Q17 {
     // Method to calculate power with exception handling
-    public long power(int n, int p) throws Exception {
+    public long power_Q17(int n, int p) throws Exception {
         // Check if both n and p are zero
         if (n == 0 && p == 0) {
             throw new Exception("n and p should not be zero.");
@@ -48,7 +48,7 @@ class MyCalculator {
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        MyCalculator calculator = new MyCalculator();
+        MyCalculator_Q17 calculator = new MyCalculator_Q17();
         
         System.out.println("Enter pairs of integers (n p) to calculate n^p:");
         System.out.println("Enter 'exit' to quit");
@@ -71,7 +71,7 @@ class MyCalculator {
                 int n = Integer.parseInt(values[0]);
                 int p = Integer.parseInt(values[1]);
                 
-                long result = calculator.power(n, p);
+                long result = calculator.power_Q17(n, p);
                 System.out.println(result);
                 
             } catch (NumberFormatException e) {

@@ -21,49 +21,49 @@ Override abstract method changeTemp() to convert degree Celsius into Fahrenheit 
 import java.util.Scanner;
 
 // Abstract Base Class Temperature
-abstract class Temperature {
+abstract class Temperature_Q14 {
     protected double temp;
     
     // Method to set temperature data
-    public void setTempData(double temp) {
+    public void setTempData_Q14(double temp) {
         this.temp = temp;
     }
     
     // Abstract method to change temperature
-    abstract void changeTemp();
+    abstract void changeTemp_Q14();
 }
 
 // Sub Class Fahrenheit
-class Fahrenheit extends Temperature {
+class Fahrenheit_Q14 extends Temperature_Q14 {
     private double ctemp;
     
     // Override abstract method to convert Fahrenheit to Celsius
     @Override
-    void changeTemp() {
+    void changeTemp_Q14() {
         ctemp = 5.0 / 9.0 * (temp - 32);
         System.out.println(temp + "°F = " + ctemp + "°C");
     }
 }
 
 // Sub Class Celsius
-class Celsius extends Temperature {
+class Celsius_Q14 extends Temperature_Q14 {
     private double ftemp;
     
     // Override abstract method to convert Celsius to Fahrenheit
     @Override
-    void changeTemp() {
+    void changeTemp_Q14() {
         ftemp = 9.0 / 5.0 * temp + 32;
         System.out.println(temp + "°C = " + ftemp + "°F");
     }
 }
 
-public class TemperatureConverter {
+public class TemperatureConverter_Q14 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
         // Create objects of both subclasses
-        Fahrenheit fahrenheit = new Fahrenheit();
-        Celsius celsius = new Celsius();
+        Fahrenheit_Q14 fahrenheit = new Fahrenheit_Q14();
+        Celsius_Q14 celsius = new Celsius_Q14();
         
         // Menu for temperature conversion
         int choice;
@@ -79,14 +79,14 @@ public class TemperatureConverter {
                 case 1:
                     System.out.print("Enter temperature in Fahrenheit: ");
                     double fTemp = scanner.nextDouble();
-                    fahrenheit.setTempData(fTemp);
-                    fahrenheit.changeTemp();
+                    fahrenheit.setTempData_Q14(fTemp);
+                    fahrenheit.changeTemp_Q14();
                     break;
                 case 2:
                     System.out.print("Enter temperature in Celsius: ");
                     double cTemp = scanner.nextDouble();
-                    celsius.setTempData(cTemp);
-                    celsius.changeTemp();
+                    celsius.setTempData_Q14(cTemp);
+                    celsius.changeTemp_Q14();
                     break;
                 case 3:
                     System.out.println("Exiting program...");

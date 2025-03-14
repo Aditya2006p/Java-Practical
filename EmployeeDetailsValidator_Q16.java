@@ -11,48 +11,48 @@ If the above conditions are not met, then the application should raise specific 
 import java.util.Scanner;
 
 // Custom exception for invalid employee name
-class InvalidEmployeeNameException extends Exception {
-    public InvalidEmployeeNameException(String message) {
+class InvalidEmployeeNameException_Q16 extends Exception {
+    public InvalidEmployeeNameException_Q16(String message) {
         super(message);
     }
 }
 
 // Custom exception for invalid employee ID
-class InvalidEmployeeIdException extends Exception {
-    public InvalidEmployeeIdException(String message) {
+class InvalidEmployeeIdException_Q16 extends Exception {
+    public InvalidEmployeeIdException_Q16(String message) {
         super(message);
     }
 }
 
 // Custom exception for invalid department ID
-class InvalidDepartmentIdException extends Exception {
-    public InvalidDepartmentIdException(String message) {
+class InvalidDepartmentIdException_Q16 extends Exception {
+    public InvalidDepartmentIdException_Q16(String message) {
         super(message);
     }
 }
 
-class Employee {
+class Employee_Q16 {
     private int employeeId;
     private String name;
     private int departmentId;
     
     // Constructor
-    public Employee(int employeeId, String name, int departmentId) 
-            throws InvalidEmployeeIdException, InvalidEmployeeNameException, InvalidDepartmentIdException {
+    public Employee_Q16(int employeeId, String name, int departmentId) 
+            throws InvalidEmployeeIdException_Q16, InvalidEmployeeNameException_Q16, InvalidDepartmentIdException_Q16 {
         
         // Validate employee ID
         if (employeeId < 2001 || employeeId > 5001) {
-            throw new InvalidEmployeeIdException("Employee ID must be between 2001 and 5001");
+            throw new InvalidEmployeeIdException_Q16("Employee ID must be between 2001 and 5001");
         }
         
         // Validate employee name
         if (name == null || name.isEmpty() || !Character.isUpperCase(name.charAt(0))) {
-            throw new InvalidEmployeeNameException("First letter of employee name must be in capital letter");
+            throw new InvalidEmployeeNameException_Q16("First letter of employee name must be in capital letter");
         }
         
         // Validate department ID
         if (departmentId < 1 || departmentId > 5) {
-            throw new InvalidDepartmentIdException("Department ID must be between 1 and 5");
+            throw new InvalidDepartmentIdException_Q16("Department ID must be between 1 and 5");
         }
         
         // If all validations pass, set the values
@@ -62,7 +62,7 @@ class Employee {
     }
     
     // Method to display employee details
-    public void displayDetails() {
+    public void displayDetails_Q16() {
         System.out.println("\nEmployee Details:");
         System.out.println("Employee ID: " + employeeId);
         System.out.println("Name: " + name);
@@ -70,7 +70,7 @@ class Employee {
     }
 }
 
-public class EmployeeDetailsValidator {
+public class EmployeeDetailsValidator_Q16 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -89,17 +89,17 @@ public class EmployeeDetailsValidator {
             int deptId = scanner.nextInt();
             
             // Create employee object with validation
-            Employee employee = new Employee(empId, empName, deptId);
+            Employee_Q16 employee = new Employee_Q16(empId, empName, deptId);
             
             // Display employee details if all validations pass
             System.out.println("\nValidation successful!");
-            employee.displayDetails();
+            employee.displayDetails_Q16();
             
-        } catch (InvalidEmployeeIdException e) {
+        } catch (InvalidEmployeeIdException_Q16 e) {
             System.out.println("Error: " + e.getMessage());
-        } catch (InvalidEmployeeNameException e) {
+        } catch (InvalidEmployeeNameException_Q16 e) {
             System.out.println("Error: " + e.getMessage());
-        } catch (InvalidDepartmentIdException e) {
+        } catch (InvalidDepartmentIdException_Q16 e) {
             System.out.println("Error: " + e.getMessage());
         } catch (Exception e) {
             System.out.println("Error: Invalid input. Please check your input format.");

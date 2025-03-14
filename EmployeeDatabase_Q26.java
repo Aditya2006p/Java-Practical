@@ -44,21 +44,21 @@ public class EmployeeDatabase_Q26 extends JFrame {
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         
         // Create the input form panel
-        JPanel formPanel = createFormPanel();
+        JPanel formPanel = createFormPanel_Q26();
         mainPanel.add(formPanel, BorderLayout.NORTH);
         
         // Create the table panel
-        JPanel tablePanel = createTablePanel();
+        JPanel tablePanel = createTablePanel_Q26();
         mainPanel.add(tablePanel, BorderLayout.CENTER);
         
         // Set the content pane
         setContentPane(mainPanel);
         
         // Initialize the database
-        initializeDatabase();
+        initializeDatabase_Q26();
     }
     
-    private JPanel createFormPanel() {
+    private JPanel createFormPanel_Q26() {
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBorder(BorderFactory.createTitledBorder("Employee Information"));
         
@@ -117,13 +117,13 @@ public class EmployeeDatabase_Q26 extends JFrame {
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 0));
         
         saveButton = new JButton("Save");
-        saveButton.addActionListener(e -> saveEmployee());
+        saveButton.addActionListener(e -> saveEmployee_Q26());
         
         viewButton = new JButton("View All");
-        viewButton.addActionListener(e -> viewAllEmployees());
+        viewButton.addActionListener(e -> viewAllEmployees_Q26());
         
         clearButton = new JButton("Clear");
-        clearButton.addActionListener(e -> clearForm());
+        clearButton.addActionListener(e -> clearForm_Q26());
         
         buttonPanel.add(saveButton);
         buttonPanel.add(viewButton);
@@ -138,7 +138,7 @@ public class EmployeeDatabase_Q26 extends JFrame {
         return panel;
     }
     
-    private JPanel createTablePanel() {
+    private JPanel createTablePanel_Q26() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createTitledBorder("Employee Records"));
         
@@ -155,8 +155,8 @@ public class EmployeeDatabase_Q26 extends JFrame {
         return panel;
     }
     
-    private void initializeDatabase() {
-        try (Connection conn = getConnection()) {
+    private void initializeDatabase_Q26() {
+        try (Connection conn = getConnection_Q26()) {
             // Create the employee table if it doesn't exist
             String createTableSQL = 
                 "CREATE TABLE IF NOT EXISTS employees (" +
@@ -171,12 +171,12 @@ public class EmployeeDatabase_Q26 extends JFrame {
                 System.out.println("Database initialized successfully.");
             }
         } catch (SQLException e) {
-            showError("Database Initialization Error", e.getMessage());
+            showError_Q26("Database Initialization Error", e.getMessage());
             e.printStackTrace();
         }
     }
     
-    private void saveEmployee() {
+    private void saveEmployee_Q26() {
         // Get the input values
         String name = nameField.getText().trim();
         String code = codeField.getText().trim();
@@ -185,7 +185,7 @@ public class EmployeeDatabase_Q26 extends JFrame {
         
         // Validate the input
         if (name.isEmpty() || code.isEmpty() || designation.isEmpty() || salaryStr.isEmpty()) {
-            showError("Input Error", "All fields are required.");
+            showError_Q26("Input Error", "All fields are required.");
             return;
         }
         
@@ -193,12 +193,12 @@ public class EmployeeDatabase_Q26 extends JFrame {
         try {
             salary = Double.parseDouble(salaryStr);
         } catch (NumberFormatException e) {
-            showError("Input Error", "Salary must be a valid number.");
+            showError_Q26("Input Error", "Salary must be a valid number.");
             return;
         }
         
         // Insert the employee record into the database
-        try (Connection conn = getConnection()) {
+        try (Connection conn = getConnection_Q26()) {
             String insertSQL = 
                 "INSERT INTO employees (name, code, designation, salary) " +
                 "VALUES (?, ?, ?, ?)";
@@ -216,22 +216,22 @@ public class EmployeeDatabase_Q26 extends JFrame {
                         "Success", JOptionPane.INFORMATION_MESSAGE);
                     
                     // Clear the form and refresh the table
-                    clearForm();
-                    viewAllEmployees();
+                    clearForm_Q26();
+                    viewAllEmployees_Q26();
                 }
             }
         } catch (SQLException e) {
-            showError("Database Error", e.getMessage());
+            showError_Q26("Database Error", e.getMessage());
             e.printStackTrace();
         }
     }
     
-    private void viewAllEmployees() {
+    private void viewAllEmployees_Q26() {
         // Clear the existing table data
         tableModel.setRowCount(0);
         
         // Retrieve all employee records from the database
-        try (Connection conn = getConnection()) {
+        try (Connection conn = getConnection_Q26()) {
             String selectSQL = "SELECT name, code, designation, salary FROM employees";
             
             try (Statement stmt = conn.createStatement();
@@ -255,12 +255,12 @@ public class EmployeeDatabase_Q26 extends JFrame {
                 }
             }
         } catch (SQLException e) {
-            showError("Database Error", e.getMessage());
+            showError_Q26("Database Error", e.getMessage());
             e.printStackTrace();
         }
     }
     
-    private void clearForm() {
+    private void clearForm_Q26() {
         nameField.setText("");
         codeField.setText("");
         designationField.setText("");
@@ -268,11 +268,11 @@ public class EmployeeDatabase_Q26 extends JFrame {
         nameField.requestFocus();
     }
     
-    private void showError(String title, String message) {
+    private void showError_Q26(String title, String message) {
         JOptionPane.showMessageDialog(this, message, title, JOptionPane.ERROR_MESSAGE);
     }
     
-    private Connection getConnection() throws SQLException {
+    private Connection getConnection_Q26() throws SQLException {
         return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
     }
     

@@ -25,7 +25,7 @@ After creating the class, do the following operations.
 
 import java.util.Scanner;
 
-public class Bank {
+public class Bank_Q10 {
     // Static variable to generate unique account numbers
     private static int nextAccountNumber = 1001;
     
@@ -36,20 +36,20 @@ public class Bank {
     private double balance;
     
     // Constructor
-    public Bank(String name, String address, double initialBalance) {
+    public Bank_Q10(String name, String address, double initialBalance) {
         this.depositorName = name;
         this.depositorAddress = address;
-        this.accountNumber = generateAccountNumber();
+        this.accountNumber = generateAccountNumber_Q10();
         this.balance = initialBalance;
     }
     
     // Method to generate unique account number
-    private int generateAccountNumber() {
+    private int generateAccountNumber_Q10() {
         return nextAccountNumber++;
     }
     
     // Method to display information and balance
-    public void displayInfo() {
+    public void displayInfo_Q10() {
         System.out.println("\nAccount Information:");
         System.out.println("Account Number: " + accountNumber);
         System.out.println("Name: " + depositorName);
@@ -58,7 +58,7 @@ public class Bank {
     }
     
     // Method to deposit amount
-    public void deposit(double amount) {
+    public void deposit_Q10(double amount) {
         if (amount > 0) {
             balance += amount;
             System.out.println("$" + amount + " deposited successfully.");
@@ -68,7 +68,7 @@ public class Bank {
     }
     
     // Method to withdraw amount
-    public void withdraw(double amount) {
+    public void withdraw_Q10(double amount) {
         if (amount > 0) {
             if (amount <= balance) {
                 balance -= amount;
@@ -82,13 +82,13 @@ public class Bank {
     }
     
     // Method to change address
-    public void changeAddress(String newAddress) {
+    public void changeAddress_Q10(String newAddress) {
         this.depositorAddress = newAddress;
         System.out.println("Address updated successfully.");
     }
     
     // Getter for account number
-    public int getAccountNumber() {
+    public int getAccountNumber_Q10() {
         return accountNumber;
     }
     
@@ -102,7 +102,7 @@ public class Bank {
         scanner.nextLine(); // Consume newline
         
         // Create array to store Bank objects
-        Bank[] accounts = new Bank[numDepositors];
+        Bank_Q10[] accounts = new Bank_Q10[numDepositors];
         
         // Input information for each depositor
         for (int i = 0; i < numDepositors; i++) {
@@ -119,8 +119,8 @@ public class Bank {
             scanner.nextLine(); // Consume newline
             
             // Create new Bank object
-            accounts[i] = new Bank(name, address, balance);
-            System.out.println("Account created with account number: " + accounts[i].getAccountNumber());
+            accounts[i] = new Bank_Q10(name, address, balance);
+            System.out.println("Account created with account number: " + accounts[i].getAccountNumber_Q10());
         }
         
         // Menu for operations
@@ -143,7 +143,7 @@ public class Bank {
                 // Find the account
                 int index = -1;
                 for (int i = 0; i < accounts.length; i++) {
-                    if (accounts[i].getAccountNumber() == accNum) {
+                    if (accounts[i].getAccountNumber_Q10() == accNum) {
                         index = i;
                         break;
                     }
@@ -157,25 +157,25 @@ public class Bank {
                 // Perform the selected operation
                 switch (choice) {
                     case 1:
-                        accounts[index].displayInfo();
+                        accounts[index].displayInfo_Q10();
                         break;
                     case 2:
                         System.out.print("Enter amount to deposit: $");
                         double depositAmount = scanner.nextDouble();
-                        accounts[index].deposit(depositAmount);
-                        accounts[index].displayInfo();
+                        accounts[index].deposit_Q10(depositAmount);
+                        accounts[index].displayInfo_Q10();
                         break;
                     case 3:
                         System.out.print("Enter amount to withdraw: $");
                         double withdrawAmount = scanner.nextDouble();
-                        accounts[index].withdraw(withdrawAmount);
-                        accounts[index].displayInfo();
+                        accounts[index].withdraw_Q10(withdrawAmount);
+                        accounts[index].displayInfo_Q10();
                         break;
                     case 4:
                         System.out.print("Enter new address: ");
                         String newAddress = scanner.nextLine();
-                        accounts[index].changeAddress(newAddress);
-                        accounts[index].displayInfo();
+                        accounts[index].changeAddress_Q10(newAddress);
+                        accounts[index].displayInfo_Q10();
                         break;
                 }
             }

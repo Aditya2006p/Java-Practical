@@ -70,16 +70,16 @@ public class TodoApp_Q25 extends Application {
         root.setPadding(new Insets(10));
         
         // Create the task input form
-        GridPane inputForm = createInputForm();
+        GridPane inputForm = createInputForm_Q25();
         root.setTop(inputForm);
         
         // Create the task list view
         taskListView = new ListView<>(taskList);
-        taskListView.setCellFactory(createCellFactory());
+        taskListView.setCellFactory(createCellFactory_Q25());
         root.setCenter(taskListView);
         
         // Create the button panel
-        HBox buttonPanel = createButtonPanel();
+        HBox buttonPanel = createButtonPanel_Q25();
         root.setBottom(buttonPanel);
         
         // Create the scene and show the stage
@@ -88,10 +88,10 @@ public class TodoApp_Q25 extends Application {
         primaryStage.show();
         
         // Add some sample tasks
-        addSampleTasks();
+        addSampleTasks_Q25();
     }
     
-    private GridPane createInputForm() {
+    private GridPane createInputForm_Q25() {
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
@@ -109,7 +109,7 @@ public class TodoApp_Q25 extends Application {
         
         // Add button
         Button addButton = new Button("Add Task");
-        addButton.setOnAction(e -> addTask());
+        addButton.setOnAction(e -> addTask_Q25());
         
         // Add components to the grid
         grid.add(descriptionLabel, 0, 0);
@@ -128,25 +128,25 @@ public class TodoApp_Q25 extends Application {
         return grid;
     }
     
-    private HBox createButtonPanel() {
+    private HBox createButtonPanel_Q25() {
         HBox buttonPanel = new HBox(10);
         buttonPanel.setPadding(new Insets(10, 0, 0, 0));
         
         Button deleteButton = new Button("Delete Task");
-        deleteButton.setOnAction(e -> deleteTask());
+        deleteButton.setOnAction(e -> deleteTask_Q25());
         
         Button markCompletedButton = new Button("Mark as Completed");
-        markCompletedButton.setOnAction(e -> markTaskAsCompleted());
+        markCompletedButton.setOnAction(e -> markTaskAsCompleted_Q25());
         
         Button clearAllButton = new Button("Clear All");
-        clearAllButton.setOnAction(e -> clearAllTasks());
+        clearAllButton.setOnAction(e -> clearAllTasks_Q25());
         
         buttonPanel.getChildren().addAll(deleteButton, markCompletedButton, clearAllButton);
         
         return buttonPanel;
     }
     
-    private Callback<ListView<Task>, ListCell<Task>> createCellFactory() {
+    private Callback<ListView<Task>, ListCell<Task>> createCellFactory_Q25() {
         return listView -> new ListCell<Task>() {
             @Override
             protected void updateItem(Task task, boolean empty) {
@@ -173,7 +173,7 @@ public class TodoApp_Q25 extends Application {
         };
     }
     
-    private void addTask() {
+    private void addTask_Q25() {
         String description = taskDescriptionField.getText().trim();
         LocalDate dueDate = dueDatePicker.getValue();
         
@@ -186,20 +186,20 @@ public class TodoApp_Q25 extends Application {
             dueDatePicker.setValue(LocalDate.now());
             taskDescriptionField.requestFocus();
         } else {
-            showAlert("Invalid Input", "Please enter a task description and select a due date.");
+            showAlert_Q25("Invalid Input", "Please enter a task description and select a due date.");
         }
     }
     
-    private void deleteTask() {
+    private void deleteTask_Q25() {
         int selectedIndex = taskListView.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
             taskList.remove(selectedIndex);
         } else {
-            showAlert("No Selection", "Please select a task to delete.");
+            showAlert_Q25("No Selection", "Please select a task to delete.");
         }
     }
     
-    private void markTaskAsCompleted() {
+    private void markTaskAsCompleted_Q25() {
         int selectedIndex = taskListView.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
             Task selectedTask = taskList.get(selectedIndex);
@@ -208,21 +208,21 @@ public class TodoApp_Q25 extends Application {
             // Refresh the list view to update the display
             taskListView.refresh();
         } else {
-            showAlert("No Selection", "Please select a task to mark as completed.");
+            showAlert_Q25("No Selection", "Please select a task to mark as completed.");
         }
     }
     
-    private void clearAllTasks() {
+    private void clearAllTasks_Q25() {
         taskList.clear();
     }
     
-    private void addSampleTasks() {
+    private void addSampleTasks_Q25() {
         taskList.add(new Task("Complete Java assignment", LocalDate.now().plusDays(1)));
         taskList.add(new Task("Prepare presentation", LocalDate.now().plusDays(3)));
         taskList.add(new Task("Study for exam", LocalDate.now().plusDays(7)));
     }
     
-    private void showAlert(String title, String message) {
+    private void showAlert_Q25(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);

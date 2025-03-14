@@ -5,37 +5,37 @@ Now create another class 'Area' containing all the three methods rectangleArea()
 (Use Runtime Polymorphism)
 */
 
-abstract class Shape {
+abstract class Shape_Q13 {
     // Abstract methods
-    abstract double rectangleArea(double length, double width);
-    abstract double squareArea(double side);
-    abstract double circleArea(double radius);
+    abstract double rectangleArea_Q13(double length, double width);
+    abstract double squareArea_Q13(double side);
+    abstract double circleArea_Q13(double radius);
 }
 
-class Area extends Shape {
+class Area_Q13 extends Shape_Q13 {
     // Implementation of rectangleArea method
     @Override
-    double rectangleArea(double length, double width) {
+    double rectangleArea_Q13(double length, double width) {
         return length * width;
     }
     
     // Implementation of squareArea method
     @Override
-    double squareArea(double side) {
+    double squareArea_Q13(double side) {
         return side * side;
     }
     
     // Implementation of circleArea method
     @Override
-    double circleArea(double radius) {
+    double circleArea_Q13(double radius) {
         return Math.PI * radius * radius;
     }
 }
 
-public class ShapeArea {
+public class ShapeArea_Q13 {
     public static void main(String[] args) {
         // Create an object of Area class
-        Shape shape = new Area(); // Using runtime polymorphism
+        Shape_Q13 shape = new Area_Q13(); // Using runtime polymorphism
         
         // Calculate and display area of rectangle
         double rectangleLength = 5.0;
@@ -43,16 +43,16 @@ public class ShapeArea {
         System.out.println("Rectangle with length = " + rectangleLength + 
                            " and width = " + rectangleWidth);
         System.out.println("Area of Rectangle: " + 
-                           shape.rectangleArea(rectangleLength, rectangleWidth));
+                           shape.rectangleArea_Q13(rectangleLength, rectangleWidth));
         
         // Calculate and display area of square
         double squareSide = 4.0;
         System.out.println("\nSquare with side = " + squareSide);
-        System.out.println("Area of Square: " + shape.squareArea(squareSide));
+        System.out.println("Area of Square: " + shape.squareArea_Q13(squareSide));
         
         // Calculate and display area of circle
         double circleRadius = 2.5;
         System.out.println("\nCircle with radius = " + circleRadius);
-        System.out.println("Area of Circle: " + shape.circleArea(circleRadius));
+        System.out.println("Area of Circle: " + shape.circleArea_Q13(circleRadius));
     }
 } 

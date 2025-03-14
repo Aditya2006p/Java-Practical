@@ -15,7 +15,7 @@ public class AlternateList_Q23 {
         List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> list2 = Arrays.asList(6, 7, 8, 9, 10);
         
-        List<Integer> result1 = alternate(list1, list2);
+        List<Integer> result1 = alternate_Q23(list1, list2);
         System.out.println("List 1: " + list1);
         System.out.println("List 2: " + list2);
         System.out.println("Alternating result: " + result1);
@@ -25,7 +25,7 @@ public class AlternateList_Q23 {
         List<Integer> list3 = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
         List<Integer> list4 = Arrays.asList(8, 9, 10);
         
-        List<Integer> result2 = alternate(list3, list4);
+        List<Integer> result2 = alternate_Q23(list3, list4);
         System.out.println("\nList 3: " + list3);
         System.out.println("List 4: " + list4);
         System.out.println("Alternating result: " + result2);
@@ -35,7 +35,7 @@ public class AlternateList_Q23 {
         List<Integer> list5 = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> list6 = Arrays.asList(6, 7, 8, 9, 10, 11, 12);
         
-        List<Integer> result3 = alternate(list5, list6);
+        List<Integer> result3 = alternate_Q23(list5, list6);
         System.out.println("\nList 5: " + list5);
         System.out.println("List 6: " + list6);
         System.out.println("Alternating result: " + result3);
@@ -51,7 +51,7 @@ public class AlternateList_Q23 {
      * @param list2 the second List of integers
      * @return a new List containing alternating elements from the two input lists
      */
-    public static List<Integer> alternate(List<Integer> list1, List<Integer> list2) {
+    public static List<Integer> alternate_Q23(List<Integer> list1, List<Integer> list2) {
         List<Integer> result = new ArrayList<>();
         
         // Determine the minimum length of the two lists
